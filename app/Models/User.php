@@ -42,4 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function allergies(){
+        return $this->HasMany('App\Models\Allergy');
+    }
+    
+    public function medications(){
+        return $this->HasMany('App\Models\Medication');
+    }
+
+    public function diseases(){
+        return $this->HasMany('App\Models\Disease');
+    }
+
+    public function contacts(){
+        return $this->HasMany('App\Models\Contact');
+    }
 }
