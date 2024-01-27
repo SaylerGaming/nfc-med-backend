@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\{
     AuthController,
+    UserController,
 };
 
 /*
@@ -22,5 +23,8 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::get('/get_info', [UserController::class, 'getInfo']);
+    Route::get('/user/update', [UserController::class, 'update']);
+
     Route::post('/logout', [AuthController::class, 'logout']);
 });
