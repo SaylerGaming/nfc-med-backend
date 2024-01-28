@@ -8,6 +8,7 @@ use App\Http\Controllers\API\{
     UserController,
     MedicationController,
     AllergyController,
+    DiseaseController,
 };
 
 /*
@@ -37,6 +38,12 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/allergy/create', [AllergyController::class, 'store']);
     Route::delete('/allergy/{id}', [AllergyController::class, 'delete']);
     Route::post('/allergy/{id}', [AllergyController::class, 'update']);
+    
+    Route::get('/diseases', [AllergyController::class, 'index']);
+    Route::post('/disease/create', [AllergyController::class, 'store']);
+    Route::delete('/disease/{id}', [AllergyController::class, 'delete']);
+    Route::post('/disease/{id}', [AllergyController::class, 'update']);
+    
 
     Route::post('/logout', [AuthController::class, 'logout']);
 });
