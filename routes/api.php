@@ -9,6 +9,7 @@ use App\Http\Controllers\API\{
     MedicationController,
     AllergyController,
     DiseaseController,
+    ContactController,
 };
 
 /*
@@ -44,6 +45,10 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::delete('/disease/{id}', [AllergyController::class, 'delete']);
     Route::post('/disease/{id}', [AllergyController::class, 'update']);
     
+    Route::get('/contacts', [ContactController::class, 'index']);
+    Route::post('/contact/create', [ContactController::class, 'store']);
+    Route::delete('/contact/{id}', [ContactController::class, 'delete']);
+    Route::post('/contact/{id}', [ContactController::class, 'update']);
 
     Route::post('/logout', [AuthController::class, 'logout']);
 });
