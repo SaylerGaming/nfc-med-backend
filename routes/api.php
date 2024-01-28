@@ -40,10 +40,10 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::delete('/allergy/{id}', [AllergyController::class, 'delete']);
     Route::post('/allergy/{id}', [AllergyController::class, 'update']);
     
-    Route::get('/diseases', [AllergyController::class, 'index']);
-    Route::post('/disease/create', [AllergyController::class, 'store']);
-    Route::delete('/disease/{id}', [AllergyController::class, 'delete']);
-    Route::post('/disease/{id}', [AllergyController::class, 'update']);
+    Route::get('/diseases', [DiseaseController::class, 'index']);
+    Route::post('/disease/create', [DiseaseController::class, 'store']);
+    Route::delete('/disease/{id}', [DiseaseController::class, 'delete']);
+    Route::post('/disease/{id}', [DiseaseController::class, 'update']);
     
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::post('/contact/create', [ContactController::class, 'store']);
