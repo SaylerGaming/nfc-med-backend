@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'user' => [ // Replace 'user' with your desired name
+            'driver' => 'session', // Or adjust based on your driver (e.g., token)
+            'provider' => 'users', // Assuming your user model provider name
+        ],
     ],
 
     /*
