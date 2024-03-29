@@ -12,10 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('hospital');
-            $table->foreignId('hospital_id')->nullable()->constrained()->onDelete('set null');
-            $table->string('blood_type')->nullable();
-            $table->string('slug')->nullable();
+            $table->string('avatar')->default('/users/default.png');
         });
     }
 
@@ -25,12 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('blood_type');
-            $table->dropColumn('slug');
-            $table->dropForeign(['hospital_id']);
-            $table->dropColumn('hospital_id');
-            $table->string('hospital')->nullable();
-
+            $table->dropColumn('avatar');
         });
     }
 };

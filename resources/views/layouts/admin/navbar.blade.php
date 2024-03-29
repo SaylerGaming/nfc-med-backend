@@ -73,7 +73,7 @@
             else $image = 'admin.png';
         @endphp
           <img
-            src="{{ $image }}"
+            src="/{{ $image }}"
             class="rounded-circle"
             height="25"
             loading="lazy"

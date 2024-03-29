@@ -25,8 +25,9 @@
         $user = auth()->user();
     @endphp
     @include('layouts.admin.navbar')
-    <p>main</p>
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
     <!-- MDB -->
     <script
     type="text/javascript"

@@ -33,6 +33,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
 Route::group(['middleware' => ['auth:sanctum', 'role']], function() {
     Route::view('/admin', 'admin.index');
-    // Route::view('/admin', 'admin.index');
+    Route::get('/admin/doctors', [AdminController::class, 'doctors']);
 
 });
