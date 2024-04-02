@@ -48,6 +48,14 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function getRoleName() {
+        $roleString = '';
+        if($this->role == 0) $roleString = 'Пользователь';
+        elseif($this->role == 1) $roleString = 'Врач';
+        elseif($this->role == 2) $roleString = 'Главврач';
+        return $roleString;
+    }
+
     public function allergies(){
         return $this->HasMany('App\Models\Allergy');
     }
@@ -62,5 +70,9 @@ class User extends Authenticatable
 
     public function contacts(){
         return $this->HasMany('App\Models\Contact');
+    }
+
+    public function hospital(){
+        return $this->belongsTo('App\Models\Hospital');
     }
 }

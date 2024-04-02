@@ -17,7 +17,7 @@ class HospitalFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => 'Большница '.fake()->secondaryAddress()
+            'name' => 'Больница '.fake()->secondaryAddress()
         ];
     }
 }

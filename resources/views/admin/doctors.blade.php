@@ -36,7 +36,7 @@
                 <a class="text-muted mb-0" href="tel:{{$doctor->phone}}">{{$doctor->phone}}</a>
             </td>
             <td>
-                <a href="/admin/{{ $doctor->id }}" type="button" class="btn btn-link btn-sm btn-rounded">
+                <a href="/admin/doctor/{{ $doctor->id }}" type="button" class="btn btn-link btn-sm btn-rounded">
                     Подробнее
                 </a>
             </td>
