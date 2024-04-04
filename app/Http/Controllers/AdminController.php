@@ -21,7 +21,9 @@ class AdminController extends Controller
     }
 
     public function doctor($id) {
-        $doctor = User::with('hospital')->findOrFail($id);
+        $doctor = User::with('hospital')->find($id);
+        if(!$doctor) return redirect('/admin/doctors')->with('error', 'Данного доктора не существует');
+        elseif($doctor->hospital->id != Auth()->user()->hospital_id) return redirect('/admin/doctors')->with('error', 'Данный доктор не находится в вашем подчинении');
         $table = [];
         array_push($table, ['Должность', $doctor->getRoleName()]);
         array_push($table, ['Почта', $doctor->email]);
@@ -58,5 +60,17 @@ class AdminController extends Controller
             'role' => 0
         ]);
         return redirect('/admin/doctors')->with('success', $doctor->getFullname().' больше не ваш подчиненный');
+    }
+
+    public function promote($id) {
+        $user = Auth()->user();
+        $doctor = User::find($id);
+        if(!$doctor) return redirect()->back()->with('error', 'Данного доктора не существует');
+        elseif($doctor->hospital_id != $user->hospital_id) return redirect()->back()->with('error', 'Данный доктор не является вашим подопечным');
+        elseif($doctor->role == 2) return redirect()->back()->with('error', 'Данный врач уже является главврачом');
+        $doctor->update([
+            'role' => 2
+        ]);
+        return redirect('/admin/doctors')->with('success', $doctor->getFullname().' теперь является главврачом!');
     }
 }

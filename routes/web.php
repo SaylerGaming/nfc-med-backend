@@ -37,5 +37,6 @@ Route::group(['middleware' => ['auth:sanctum', 'role']], function() {
     Route::post('/admin/doctors/add', [AdminController::class, 'add']);
     Route::get('/admin/doctor/{id}', [AdminController::class, 'doctor']);
     Route::post('/admin/doctor/{id}/delete', [AdminController::class, 'delete']);
+    Route::post('/admin/doctor/{id}/promote', [AdminController::class, 'promote']);
 
 });

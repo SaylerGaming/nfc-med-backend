@@ -53,7 +53,7 @@
                     class="rounded-circle"
                     />
                 <div class="ms-3">
-                    <p class="fw-bold mb-1">{{$doctor->name}} {{$doctor->surname}}</p>
+                    <p class="fw-bold mb-1">{{$doctor->getFullname()}}</p>
                     @if($doctor->role == 2)
                         <span class="badge badge-primary rounded-pill d-inline">Главврач</span>
                     @elseif($doctor->role == 1)
