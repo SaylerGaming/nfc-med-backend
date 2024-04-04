@@ -23,5 +23,29 @@
         @endforeach
     </tbody>
     </table>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-outline-danger mb-4" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+    Больше не врач
+    </button>
+
+<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form action="/admin/doctor/{{$doctor->id}}/delete" method="post">
+        @csrf
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Вы уверены?</h5>
+                    <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Данный доктор перестанет быть вашим подчиненным</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Закрыть</button>
+                    <button  type="submit" class="btn btn-outline-danger" data-mdb-ripple-init>Подтвердить</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
 
 @endsection

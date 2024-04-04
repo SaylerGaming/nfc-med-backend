@@ -47,4 +47,16 @@ class AdminController extends Controller
         ]);
         return redirect('/admin/doctor/'.$doctor->id);
     }
+
+    public function delete($id) {
+        $user = Auth()->user();
+        $doctor = User::find($id);
+        if(!$doctor) return redirect()->back()->with('error', 'Данного доктора не существует');
+        elseif($doctor->hospital_id != $user->hospital_id) return redirect()->back()->with('error', 'Данный доктор не является вашим подопечным');
+        elseif($doctor->role == 2) return redirect()->back()->with('error', 'Вы не можете убрать главврача с поста');
+        $doctor->update([
+            'role' => 0
+        ]);
+        return redirect('/admin/doctors')->with('success', $doctor->getFullname().' больше не ваш подчиненный');
+    }
 }

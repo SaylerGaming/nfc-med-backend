@@ -57,6 +57,10 @@ class User extends Authenticatable
         return $roleString;
     }
 
+    public function getFullname() {
+        return $this->name.' '.$this->surname;
+    }
+
     public function allergies(){
         return $this->HasMany('App\Models\Allergy');
     }
