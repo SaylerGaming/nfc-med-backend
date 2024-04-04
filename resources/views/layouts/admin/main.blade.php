@@ -19,12 +19,36 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
     rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="/css/alerts.css">
 </head>
 <body>
     @php
         $user = auth()->user();
     @endphp
     @include('layouts.admin.navbar')
+
+    @if (\Session::has('success'))
+        <label>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert notice">
+            <span class="alertClose">X</span>
+            <span class="alertText">{{ \Session::get('success') }}
+            <br class="clear"/></span>
+        </div>
+        </label>
+    @elseif(\Session::has('error'))
+        <label>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert error">
+            <span class="alertClose">X</span>
+            <span class="alertText">{{ \Session::get('error') }}
+            <br class="clear"/></span>
+        </div>
+        </label>
+    @endif
+
+
     <div class="container">
         @yield('content')
     </div>

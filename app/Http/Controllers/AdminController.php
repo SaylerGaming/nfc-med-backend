@@ -32,4 +32,19 @@ class AdminController extends Controller
         $doctor->table = $table;
         return view('admin.doctor', compact('doctor'));
     }
+
+    public function add(Request $request) {
+        $user = Auth()->user();
+        $doctor = User::where('name', $request->name)->where('surname', $request->surname)->first();
+        if(!$doctor) return redirect()->back()->with('error', 'Пользователь с таким именем и фамилией не найден');
+        elseif($doctor->role > 0) {
+            if($doctor->hospital_id == $user->hospital_id) return redirect()->back()->with('error', 'Данный доктор уже являтеся вашим подопечным');
+            return redirect()->back()->with('error', 'Данный пользователь уже являтеся доктором в другой клинике');
+        }
+        $doctor->update([
+            'role' => 1,
+            'hospital_id' => Auth()->user()->hospital_id
+        ]);
+        return redirect('/admin/doctor/'.$doctor->id);
+    }
 }
