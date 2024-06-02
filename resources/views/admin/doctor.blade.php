@@ -1,15 +1,16 @@
 @extends('layouts.admin.main')
 @section('content')
 
-    @if($doctor->id == auth()->id())
+    <!-- @if($doctor->id == auth()->id())
         <a href="/user/edit" type="button" class="btn btn-outline-primary mt-4" data-mdb-ripple-init data-mdb-ripple-color="dark">Редактировать</a>
-    @endif
+    @endif -->
     <div class="text-center mt-4 mb-4">
         <h1 class="display-4">{{$doctor->getFullname()}}</h1>
         <img
         src="{{ $doctor->avatar }}"
         class="rounded shadow-5-strong"
         alt="Hollywood Sign on The Hill"
+        style="width: 100px; height: 100px"
         />
     </div>
     <table class="table ">

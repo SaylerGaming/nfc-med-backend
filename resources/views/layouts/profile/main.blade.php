@@ -26,10 +26,7 @@
 
 </head>
 <body>
-    @php
-        $user = auth()->user();
-    @endphp
-    @include('layouts.admin.navbar')
+    @include('layouts.profile.navbar')
 
     @if (\Session::has('success'))
         <label>

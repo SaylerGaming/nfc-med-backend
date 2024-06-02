@@ -26,7 +26,9 @@ class User extends Authenticatable
         'phone',
         'iin',
         'hospital_id',
-        'role'
+        'role',
+        'avatar',
+        'blood_type'
     ];
 
     /**

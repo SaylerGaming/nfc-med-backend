@@ -17,7 +17,8 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        if(Auth::user()) return redirect()->back();
+        // dd(1);
+        if(Auth::user()) return redirect('/');
 
         $credentials = $request->validate([
             'email' => 'required|email',

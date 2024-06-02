@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+$text-font-stack: 'SF Pro Display', 'Lato', 'Open Sans', 'Helvetica Neue',
+  'Helvetica', 'Arial', sans-serif !default;
+
+/// Colors
+$color-white: #f6f6f6;
+$color-black: #000;
+$color-main: #00efc4;
+$color-brand: #fe5f1e;
+$color-bg: #1c1c1e;
+$color-text: #b8b8b8;
+$color-text-darkest: #6b6b6b;
+$color-male: #0094ff;
+$color-female: #ff3f79;
+
+/// Font sizes
+$fs-3xs: 10px;
+$fs-2xs: 12px;
+$fs-xs: 14px;
+$fs-s: 16px;
+$fs-m: 18px;
+$fs-l: 20px;
+$fs-x: 22px;
+$fs-xl: 24px;
+$fs-2xl: 32px;
+$fs-3xl: 40px;
+$fs-4xl: 48px;
+$fs-5xl: 56px;
+
+/// Container's maximum width
+$max-width: 1280px !default;
+$max-width--narrow: 1120px !default;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+) !default;

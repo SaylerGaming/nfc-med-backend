@@ -1,0 +1,166 @@
+.user {
+  .section-header .section-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .section-main .section-inner {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header {
+  &__title {
+    a {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 10px;
+        color: $color-white;
+        font-size: $fs-xl;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__btn {
+    @include btnReset;
+  }
+}
+
+.infoBlock {
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  font-size: $fs-s;
+  color: $color-white;
+  font-weight: 500;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: $fs-xl;
+  font-weight: 700;
+  color: $color-white;
+
+  svg {
+    margin: 0 10px;
+
+    path {
+      fill: $color-text;
+    }
+  }
+}
+
+.item {
+  color: $color-white;
+
+  span {
+    margin-right: 10px;
+    color: $color-text-darkest;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.hospitalList {
+  margin-bottom: 20px;
+}
+
+.hospitalItem {
+  display: flex;
+  align-items: flex-start;
+
+  svg {
+    margin-right: 10px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.hospitalItemInfo {
+  color: $color-white;
+}
+
+.hospitalItemDesc {
+  margin: 10px 0;
+  color: $color-text;
+}
+
+.mapLink {
+  display: inline-block;
+  width: 200px;
+}
+
+.contactsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsItem {
+  display: inline-flex;
+  align-items: center;
+  color: $color-white;
+
+  span {
+    color: $color-text-darkest;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.relationship {
+  margin-bottom: 5px;
+}
+
+.contactsBtns {
+  margin-left: auto;
+}
+
+.contactsBtn {
+  @include btnReset;
+
+  display: inline-flex;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.editLink {
+  margin-right: 15px;
+}

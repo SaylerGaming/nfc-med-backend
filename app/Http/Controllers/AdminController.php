@@ -12,6 +12,10 @@ use App\Models\{
 
 class AdminController extends Controller
 {
+    public function index() {
+        return redirect('/admin/doctors');
+    }
+
     public function doctors() {
         $user = Auth()->user();
         $doctors = User::where('role', '>=', 1)->where('hospital_id', $user->hospital_id)

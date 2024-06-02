@@ -1,0 +1,10 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  @include sfpro;
+
+  color: $color-text-darkest;
+  text-rendering: optimizeSpeed;
+  background-color: $color-bg;
+}

@@ -1,0 +1,66 @@
+.label {
+  display: block;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.heading {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.illnessesItemDelete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.group {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.contactsList,
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsList {
+  margin-bottom: 20px;
+}
+
+.contact {
+  margin-right: 20px;
+}
+
+.contactsItem {
+  display: inline-flex;
+  align-items: center;
+  color: $color-white;
+
+  span {
+    color: $color-text-darkest;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.relationship {
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.deleteBtn {
+  @include btnReset();
+
+  svg {
+    fill: $color-white;
+  }
+}

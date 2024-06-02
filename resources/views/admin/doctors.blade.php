@@ -48,7 +48,6 @@
                 <div class="d-flex align-items-center">
                 <img
                     src="{{ $doctor->avatar }}"
-                    alt=""
                     style="width: 45px; height: 45px"
                     class="rounded-circle"
                     />

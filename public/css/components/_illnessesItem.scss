@@ -1,0 +1,29 @@
+.illnessesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.illnessesItem {
+  position: relative;
+  display: inline-flex;
+  width: 190px;
+  height: 74px;
+  padding: 10px 15px;
+  font-size: $fs-xs;
+  color: $color-white;
+  background-color: #323234;
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 100% 0;
+
+  &:nth-child(odd) {
+    background-image: url('../../assets/img/pngwing.png');
+  }
+
+  &:nth-child(even) {
+    background-image: url('../../assets/img/cutlery.png');
+  }
+}

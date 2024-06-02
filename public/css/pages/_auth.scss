@@ -1,0 +1,113 @@
+.auth {
+  .section-main .section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 200px;
+
+    &--register {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.tab-pane {
+  display: flex;
+  flex-direction: column;
+
+  &:not(.tab-pane-show) {
+    display: none;
+  }
+}
+
+.tab {
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+}
+
+.tab-btn-active {
+  color: $color-text-darkest;
+  border-color: $color-text-darkest;
+  background-color: transparent;
+  pointer-events: none;
+
+  &:hover,
+  &:focus {
+    color: $color-text-darkest;
+    border-color: $color-text-darkest;
+    background-color: transparent;
+    pointer-events: none;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.title {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  font-size: $fs-m;
+  color: $color-white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.label {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.labelText {
+  margin-bottom: 8px;
+  font-size: $fs-xs;
+  color: $color-white;
+}
+
+.demand {
+  margin-top: 5px;
+  font-size: $fs-xs;
+  color: $color-text-darkest;
+}
+
+.demandList {
+  display: flex;
+  flex-direction: column;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.demandItem {
+  font-size: $fs-xs;
+  color: $color-text-darkest;
+}
+
+.privacyPolicy {
+  font-size: $fs-xs;
+  color: $color-text-darkest;
+  text-align: center;
+}
+
+.privacyLink {
+  color: $color-main;
+  text-decoration: underline;
+}
+
+.auth-btn {
+  @include btnReset;
+
+  margin-bottom: 10px;
+  font-size: $fs-s;
+}
